@@ -1,14 +1,17 @@
 import { faBagShopping, faBars, faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+    const [show, setShow] = useState(false);
+
     return        <div className="nav">
     <div className="inner-content">
     <h1 className="logo">
       NET<span>XOES</span>
     </h1>
-    <nav>
+    <nav className={'${show && "show"}'}>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -36,7 +39,8 @@ export default function Navbar() {
         <FontAwesomeIcon icon={faShoppingCart}/>
         <div className="produtcs-count">15</div>
       </button>
-      <button className="menu-button">
+      <button className="menu-button"
+      onClick={() => setShow(!show)}>
         <FontAwesomeIcon icon = {faBars} />
       </button>
     </div>

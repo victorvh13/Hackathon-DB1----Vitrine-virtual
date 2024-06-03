@@ -1,0 +1,110 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camisa Flamengo",
+      "image": "/images/products/Camisa Flamengo.png",
+      "rating": 5,
+      "price": 250
+    },
+    {
+      "id": 2,
+      "name": "Camisa Palmeiras II",
+      "image": "/images/products/Camisa Palmeiras II.png",
+      "rating": 5,
+      "price": 300
+    },
+    {
+      "id": 3,
+      "name": "Camisa Real Madrid Away",
+      "image": "/images/products/Camisa Real Madrid Away.png",
+      "rating": 5,
+      "price": 350
+    },
+    {
+      "id": 4,
+      "name": "Camisa São Paulo I 24-25",
+      "image": "/images/products/Camisa São Paulo I 24-25.png",
+      "rating": 5,
+      "price": 250
+    },
+    {
+      "id": 5,
+      "name": "Camisa Vasco III",
+      "image": "/images/products/Camisa Vasco III.png",
+      "rating": 5,
+      "price": 270
+    },
+    {
+      "id": 6,
+      "name": "Tênis Adidas Grand Court Base Feminino 2",
+      "image": "/images/products/Tênis Adidas Grand Court Base Feminino 2.png",
+      "rating": 4,
+      "price": 280
+    },
+    {
+      "id": 7,
+      "name": "Tênis Adidas Grand Court Base Feminino",
+      "image": "/images/products/Tênis Adidas Grand Court Base Feminino.png",
+      "rating": 4,
+      "price": 260
+    },
+    {
+      "id": 8,
+      "name": "Tênis Asics Gel-Impression 11 Feminino",
+      "image": "/images/products/Tênis Asics Gel-Impression 11 Feminino.png",
+      "rating": 5,
+      "price": 320
+    },
+    {
+      "id": 9,
+      "name": "Tênis Infantil Adidas RunFalcon 3",
+      "image": "/images/products/Tênis Infantil Adidas RunFalcon 3.png",
+      "rating": 4,
+      "price": 200
+    },
+    {
+      "id": 10,
+      "name": "Tênis Mizuno Space 4 Masculino",
+      "image": "/images/products/Tênis Mizuno Space 4 Masculino.png",
+      "rating": 5,
+      "price": 380
+    },
+    {
+      "id": 11,
+      "name": "Tênis Mizuno Wave Zest Feminino",
+      "image": "/images/products/Tênis Mizuno Wave Zest Feminino.png",
+      "rating": 5,
+      "price": 400
+    },
+    {
+      "id": 12,
+      "name": "Tênis Olympikus Corre 3",
+      "image": "/images/products/Tênis Olympikus Corre 3.png",
+      "rating": 4,
+      "price": 300
+    },
+    {
+      "id": 13,
+      "name": "Tênis Olympikus Veloz 2 157",
+      "image": "/images/products/Tênis Olympikus Veloz 2 157.png",
+      "rating": 4,
+      "price": 280
+    },
+    {
+      "id": 14,
+      "name": "Tênis Puma Carina Bdp Feminino",
+      "image": "/images/products/Tênis Puma Carina Bdp Feminino.png",
+      "rating": 4,
+      "price": 270
+    },
+    {
+      "id": 15,
+      "name": "Tênis Under Armour Charged",
+      "image": "/images/products/Tênis Under Armour Charged.png",
+      "rating": 5,
+      "price": 390
+    }
+  ]
+}
+

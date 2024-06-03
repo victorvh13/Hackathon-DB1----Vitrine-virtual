@@ -10,7 +10,7 @@ export default function Product({id, image, name, rate, price}) {
         <p className="name">{name}</p>
         <p className="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
         <p className="price">
-            {price}<span>Reais</span>
+            {price}<span> Reais</span>
         </p>
 
         <div className="buttons">

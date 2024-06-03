@@ -6,6 +6,9 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import ProductsList from "./components/ProductsList";
 import React, { useState, useEffect } from 'react';
+import ExclusiveSection from "./components/ExclusiveSection";
+import TestimonialsList from "./components/TestimonialsList";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
             </div>
           </div>
         </main>
+        <ExclusiveSection />
+        <TestimonialsList />
+        <Footer />
       </div>
     </Router>
   );

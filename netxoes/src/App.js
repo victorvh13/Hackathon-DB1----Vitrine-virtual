@@ -1,45 +1,87 @@
-import { faBagShopping, faBars, faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import ProductsList from "./components/ProductsList";
-import React, { useState, useEffect } from 'react';
-import ExclusiveSection from "./components/ExclusiveSection";
-import TestimonialsList from "./components/TestimonialsList";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
-
+import HomePage from "./components/pages/HomePage";
+import ProductsPage from "./components/pages/ProductsPage";
+import SidebarCart from "./components/SidebarCart";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [showSidebarCart, setShowSidebarCart] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
+
+  const addToCartTotal = (value) => setCartTotal(cartTotal + value);
+
 
   useEffect(() => {
     fetch("/db.json")
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
-  },[]);
+  }, []);
 
+  const addProductToCart = (id) => {
+    const productToAdd = products.filter((product) => product.id === id)[0];
+    if (selectedProducts.includes(productToAdd)) return;
+    setSelectedProducts(selectedProducts.concat(productToAdd));
+    setCartTotal(cartTotal + productToAdd.price);
+  };
+
+  const removeProductFromCart = (id) => {
+    const newSeletecdProducts = selectedProducts.filter(
+      (product) => product.id !== id
+    );
+    setSelectedProducts(newSeletecdProducts);
+  };
 
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar
+          selectedProducts={selectedProducts}
+          setShowSidebarCart={setShowSidebarCart}
+        />
+        <SidebarCart
+          addToCartTotal={addToCartTotal}
+          removeProductFromCart={removeProductFromCart}
+          cartTotal={cartTotal}
+          selectedProducts={selectedProducts}
+          setShowSidebarCart={setShowSidebarCart}
+          showSidebarCart={showSidebarCart}
+        />
         <main>
-          <Header />
-          <div className="page=inner-content">
-            <div className="section-title">
-              <h3>Produtos Selecionados</h3>
-              <div className="underline"></div>
-            </div>
-
-            <div className="main-content"> 
-              <ProductsList products={products}/> 
-            </div>
-          </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  addToCartTotal={addToCartTotal}
+                  removeProductFromCart={removeProductFromCart}
+                  selectedProducts={selectedProducts}
+                  addProductToCart={addProductToCart}
+                  products={products}
+                  setShowSidebarCart={setShowSidebarCart}
+                  showSidebarCart={showSidebarCart}
+                  cartTotal={cartTotal}
+                />
+              }
+            />
+            <Route
+              path="/products"
+              element={
+                <ProductsPage
+                  products={products}
+                  addProductToCart={addProductToCart}
+                />
+              }
+            />
+            <Route
+              path="/cart/checkout"
+              element={<div>Página de Checkout {cartTotal}</div>}
+            />
+          </Routes>
         </main>
-        <ExclusiveSection />
-        <TestimonialsList />
         <Footer />
       </div>
     </Router>
@@ -47,5 +89,3 @@ function App() {
 }
 
 export default App;
-
-

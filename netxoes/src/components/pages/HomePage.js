@@ -6,7 +6,7 @@ import ExclusiveSection from "../ExclusiveSection";
 import TestimonialsList from "../TestimonialsList";
 
 export default function HomePage({ products, addProductToCart }) {
-
+ 
   const getRandomProducts = () => {
 
     if (products.length < 6) {
@@ -14,12 +14,12 @@ export default function HomePage({ products, addProductToCart }) {
     } else {
 
       const shuffledProducts = products.sort(() => Math.random() - 0.5);
-
+  
       return shuffledProducts.slice(0, 6);
     }
   };
 
-
+  
   const randomProducts = getRandomProducts();
 
   return (
@@ -46,3 +46,4 @@ export default function HomePage({ products, addProductToCart }) {
     </>
   );
 }
+

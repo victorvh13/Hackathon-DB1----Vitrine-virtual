@@ -15,10 +15,10 @@ export default function Product({
 }) {
   const [quantity, setQuantity] = useState(1);
 
-  // Calculating total price with interest
-  const interestRate = 0.0199; // 1.99% annual interest rate
+
+  const interestRate = 0.0199; 
   const totalWithInterest = price * (1 + interestRate);
-  const maxInstallments = Math.ceil(totalWithInterest / 10); // Maximum installments with minimum of R$ 10 per installment
+  const maxInstallments = Math.ceil(totalWithInterest / 10); 
 
   const handleQuantityChange = (e) => {
     setQuantity(parseInt(e.target.value));
